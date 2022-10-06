@@ -1,0 +1,15 @@
+1. SELECT * FROM `TB_OBAT` WHERE satuan = "Botol";
+2. SELECT * FROM `TB_OBAT` WHERE jenis = 'obat keras' OR jenis = 'obat terbatas';
+3. SELECT * FROM `TB_OBAT` WHERE stock <50;
+4. SELECT * FROM `TB_OBAT` WHERE satuan <> 'tablet';
+5. SELECT * FROM `TB_OBAT` WHERE jenis = 'Obat Bebas' ORDER BY harga_jual ASC;
+6. SELECT * FROM `TB_OBAT` WHERE harga_beli BETWEEN 10000 AND 100000 AND satuan='botol';
+7. SELECT * FROM `TB_OBAT` WHERE jenis = "obat bebas" AND stock >= 5;
+8. SELECT * FROM `TB_OBAT` WHERE nama_obat LIKE 'B%';
+9. SELECT * FROM `TB_OBAT` WHERE nama_obat LIKE '%OM%';
+10.SELECT satuan, SUM(stock) AS Stock_total FROM TB_OBAT GROUP BY satuan;
+11.SELECT jenis, SUM(harga_jual)AS harga_jual FROM TB_OBAT GROUP BY jenis;
+12.SELECT * FROM `TB_OBAT` WHERE kode_obat = 'K001' OR kode_obat = 'K003' OR kode_obat = 'K005' OR kode_obat = 'K007';
+13.SELECT nama_obat, stock, harga_beli, harga_jual, (harga_beli * stock) AS total_harga_beli, (harga_jual * stock) AS total_harga_jual, (harga_jual - harga_beli) AS laba FROM tb_obat;
+14.SELECT AVG(harga_jual) AS rerata FROM TB_OBAT WHERE satuan <> "Lembar" GROUP BY satuan;
+15.SELECT MIN(harga_beli) AS harga_terrendah, MAX(harga_beli) AS harga_tertinggi FROM TB_OBAT;
